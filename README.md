@@ -1,8 +1,57 @@
+# mackerel-deleted-resource-status-change-action
+
+This action power off the host created by Mackerel's cloud integration and the cloud resource has been deleted.
+
+Please refer to [mackerel-cloud-integration](https://github.com/7474/mackerel-cloud-integration) for supported resources.
+# Usage
+
+See [action.yml](action.yml)
+
+Basic:
+
+```yaml
+steps:
+- name: Poweroff not exist cloud integration host.
+  uses: 7474/mackerel-deleted-resource-status-change-action@releases/v0
+  env:
+    MACKEREL_APIKEY: {Mackerel API Key}
+    AWS_ACCESS_KEY_ID: {Access Key ID}
+    AWS_SECRET_ACCESS_KEY: {Secret Access Key}
+    AWS_DEFAULT_REGION: {Region Name}
+    AZURE_ID: {Service Principal ID}
+    AZURE_PASS: {password}
+    AZURE_TENANT: {Tenant ID}
+    AZURE_SUB: {Subscription ID}
+  with:
+    HOST_SERVICE: service-name(optional)
+    HOST_ROLE: role-name(optional)
+    HOST_STATUS: status-name(optional)
+    HOST_TYPES: conma-separated-tag-names(optional)
+```
+
+By default, the branch or tag ref that triggered the workflow will be checked out. If you wish to check out a different branch, specify that using `with.ref`:
+
+```yaml
+- uses: actions/checkout@master
+  with:
+    ref: some-branch
+```
+
+For more details, see [Contexts and expression syntax for GitHub Actions](https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions)
+
+# License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)
+
+----
+
+The following is a template.
+
 # Create a JavaScript Action using TypeScript
 
 Use this template to bootstrap the creation of a JavaScript action.:rocket:
 
-This template includes compilication support, tests, a validation workflow, publishing, and versioning guidance.  
+This template includes compilication support, tests, a validation workflow, publishing, and versioning guidance.
 
 If you are new, there's also a simpler introduction.  See the [Hello World JavaScript Action](https://github.com/actions/hello-world-javascript-action)
 
@@ -12,7 +61,7 @@ Click the `Use this Template` and provide the new repo details for your action
 
 ## Code in Master
 
-Install the dependencies  
+Install the dependencies
 ```bash
 $ npm install
 ```
@@ -22,7 +71,7 @@ Build the typescript
 $ npm run build
 ```
 
-Run the tests :heavy_check_mark:  
+Run the tests :heavy_check_mark:
 ```bash
 $ npm test
 
@@ -51,9 +100,9 @@ import * as core from '@actions/core';
 ...
 
 async function run() {
-  try { 
+  try {
       ...
-  } 
+  }
   catch (error) {
     core.setFailed(error.message);
   }
@@ -66,7 +115,7 @@ See the [toolkit documentation](https://github.com/actions/toolkit/blob/master/R
 
 ## Publish to a distribution branch
 
-Actions are run from GitHub repos.  We will create a releases branch and only checkin production modules (core in this case). 
+Actions are run from GitHub repos.  We will create a releases branch and only checkin production modules (core in this case).
 
 Comment out node_modules in .gitignore and create a releases/v1 branch
 ```bash
@@ -86,7 +135,7 @@ $ git commit -a -m "prod dependencies"
 $ git push origin releases/v1
 ```
 
-Your action is now published! :rocket: 
+Your action is now published! :rocket:
 
 See the [versioning documentation](https://github.com/actions/toolkit/blob/master/docs/action-versioning.md)
 
