@@ -1,5 +1,5 @@
 {
-  "name": "typescript-action",
+  "name": "mackerel-deleted-resource-status-change-action",
   "version": "0.0.0",
   "private": true,
   "description": "TypeScript template action",
@@ -15,9 +15,11 @@
   "keywords": [
     "actions",
     "node",
-    "setup"
+    "mackerel",
+    "aws",
+    "azure"
   ],
-  "author": "YourNameOrOrganization",
+  "author": "koudenpa",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.0.0"
