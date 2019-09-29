@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.0.0",
-    "mackerel-cloud-integration": "git+https://github.com/7474/mackerel-cloud-integration.git#4fbb96c08fcd1530beffb21b219ec24877de111a"
+    "mackerel-cloud-integration": "git+https://github.com/7474/mackerel-cloud-integration.git#4864a789d14eb5a1cc128e2a720b5907915eeb1f"
   },
   "devDependencies": {
     "@types/jest": "^24.0.13",

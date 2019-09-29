@@ -1,10 +1,11 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: mackerel-deleted-resource-status-change-action
+description: This action power off the host created by Mackerel's cloud integration and the cloud resource has been deleted.
+author: koudenpa
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  HOST_SERVICE: service-name(optional)
+  HOST_ROLE: role-name(optional)
+  HOST_STATUS: status-name(optional)
+  HOST_TYPES: conma-separated-tag-names(optional)
 runs:
   using: 'node12'
   main: 'lib/main.js'
