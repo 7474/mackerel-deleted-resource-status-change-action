@@ -1,12 +1,12 @@
 import * as mackerelModel from "./mackerel/api/model/models";
 import * as mackerel from "./mackerel/client";
-import AWS from "aws-sdk";
 import { ICloudResource } from "./cloudResruce";
 import {
   ICloudResourceFactory,
   CloudResourceFactory
 } from "./cloudResruceFactory";
 import { S3 } from "./aws/s3";
+import { SQLDatabase } from "./azure/sqlDatabase";
 
 export interface IMackerelIntegration {
   getHosts(condition: IHostCondition): Promise<IIntegratedHost[]>;
@@ -46,6 +46,7 @@ export class MackerelIntegration implements IMackerelIntegration {
     this.cloudResourceFactory = new CloudResourceFactory();
     // XXX register
     this.cloudResourceFactory.register("s3", S3.of);
+    this.cloudResourceFactory.register("SQLDatabase", SQLDatabase.of);
   }
 
   async getHosts(condition: IHostCondition): Promise<IIntegratedHost[]> {

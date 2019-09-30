@@ -46,6 +46,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var mackerel = __importStar(require("./mackerel/client"));
 var cloudResruceFactory_1 = require("./cloudResruceFactory");
 var s3_1 = require("./aws/s3");
+var sqlDatabase_1 = require("./azure/sqlDatabase");
 var IntegratedHost = /** @class */ (function () {
     function IntegratedHost(integration, mackerelHost, cloudResource) {
         this.integration = integration;
@@ -61,6 +62,7 @@ var MackerelIntegration = /** @class */ (function () {
         this.cloudResourceFactory = new cloudResruceFactory_1.CloudResourceFactory();
         // XXX register
         this.cloudResourceFactory.register("s3", s3_1.S3.of);
+        this.cloudResourceFactory.register("SQLDatabase", sqlDatabase_1.SQLDatabase.of);
     }
     MackerelIntegration.prototype.getHosts = function (condition) {
         return __awaiter(this, void 0, void 0, function () {
