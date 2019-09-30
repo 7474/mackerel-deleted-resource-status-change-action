@@ -2,10 +2,14 @@ name: mackerel-deleted-resource-status-change-action
 description: This action power off the host created by Mackerel's cloud integration and the cloud resource has been deleted.
 author: koudenpa
 inputs:
-  HOST_SERVICE: service-name(optional)
-  HOST_ROLE: role-name(optional)
-  HOST_STATUS: status-name(optional)
-  HOST_TYPES: conma-separated-tag-names(optional)
+  HOST_SERVICE:
+    description:  service-name(optional)
+  HOST_ROLE:
+    description:  role-name(optional)
+  HOST_STATUS:
+    description:  status-name(optional)
+  HOST_TYPES:
+    description:  conma-separated-tag-names(optional)
 runs:
   using: 'node12'
   main: 'lib/main.js'
