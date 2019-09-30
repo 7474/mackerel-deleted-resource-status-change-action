@@ -1,8 +1,9 @@
 # mackerel-deleted-resource-status-change-action
 
-This action power off the host created by Mackerel's cloud integration and the cloud resource has been deleted.
+This action changes the status of the Mackerel host from which the cloud resource was deleted to Poweroff.
 
 Please refer to [mackerel-cloud-integration](https://github.com/7474/mackerel-cloud-integration) for supported resources.
+
 # Usage
 
 See [action.yml](action.yml)
@@ -28,16 +29,6 @@ steps:
     HOST_STATUS: status-name(optional)
     HOST_TYPES: conma-separated-tag-names(optional)
 ```
-
-By default, the branch or tag ref that triggered the workflow will be checked out. If you wish to check out a different branch, specify that using `with.ref`:
-
-```yaml
-- uses: actions/checkout@master
-  with:
-    ref: some-branch
-```
-
-For more details, see [Contexts and expression syntax for GitHub Actions](https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions)
 
 # License
 
