@@ -1,4 +1,3 @@
-import * as process from 'process'
 import * as cp from 'child_process'
 import * as path from 'path'
 
@@ -6,6 +5,14 @@ import * as path from 'path'
 test('test runs', () => {
     // process.env['MACKEREL_APIKEY'] = 'xxx';
     const ip = path.join(__dirname, '..', 'lib', 'main.js');
-    // 特定のエラーメッセージが出力、辺りをテストできるといいのだけれどどうにかならんものか
-    console.log(cp.execSync(`node ${ip}`).toString());
+    try {
+        console.log(cp.execSync(`node ${ip}`).toString());
+    } catch (err) {
+        console.log(err);
+        console.log(err.message);
+        console.log(err.stdout.toString());
+        console.log(err.stderr.toString());
+        // 想定するエラーならとりあえず実行はされている
+        expect(err.stdout.toString()).toEqual(expect.stringContaining('env.MACKEREL_APIKEY is requred.'))
+    }
 })
