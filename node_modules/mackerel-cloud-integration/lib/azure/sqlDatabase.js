@@ -17,7 +17,7 @@ var azureResource_1 = require("./azureResource");
 var SQLDatabase = /** @class */ (function (_super) {
     __extends(SQLDatabase, _super);
     function SQLDatabase(mackerelHost) {
-        return _super.call(this, mackerelHost, "Microsoft.Sql/servers") || this;
+        return _super.call(this, mackerelHost, "Microsoft.Sql/servers/databases") || this;
     }
     SQLDatabase.of = function (mackerelHost) {
         return new SQLDatabase(mackerelHost);

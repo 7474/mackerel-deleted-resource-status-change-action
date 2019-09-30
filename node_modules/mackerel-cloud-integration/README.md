@@ -50,7 +50,7 @@ Use default credentials for AWS. It works even if environment variables are not 
 ```
 export AWS_ACCESS_KEY_ID {Access Key ID}
 export AWS_SECRET_ACCESS_KEY {Secret Access Key}
-exportAWS_DEFAULT_REGION {Region Name}
+export AWS_DEFAULT_REGION {Region Name}
 # e.g. ap-northeast-1
 ```
 
