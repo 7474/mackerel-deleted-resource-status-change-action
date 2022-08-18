@@ -22,7 +22,7 @@
   "author": "koudenpa",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.0.0",
+    "@actions/core": "^1.9.1",
     "mackerel-cloud-integration": "git+https://github.com/7474/mackerel-cloud-integration.git#b44bcd0078be1726d3e852a9d8eb193043c79140"
   },
   "devDependencies": {
